@@ -1029,27 +1029,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+    "C:\\Users\\abychaws\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Backend.csproj",
+      "projectUniqueName": "C:\\Users\\abychaws\\Documents\\CL\\diary\\work-diary-cs\\work-diary-cs\\Backend\\Backend.csproj",
       "projectName": "Backend",
-      "projectPath": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Backend.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\obj\\",
+      "projectPath": "C:\\Users\\abychaws\\Documents\\CL\\diary\\work-diary-cs\\work-diary-cs\\Backend\\Backend.csproj",
+      "packagesPath": "C:\\Users\\abychaws\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\abychaws\\Documents\\CL\\diary\\work-diary-cs\\work-diary-cs\\Backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\abychaws\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

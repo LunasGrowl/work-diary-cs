@@ -1,0 +1,91 @@
+.content--title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#content--container{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* .content--date{
+    padding-left: 45px;
+    color: rgb(142, 151, 151);
+    font-style: italic;
+} */
+
+.content--block{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.content--block p{
+    display:flex;
+    font-style: italic;
+}
+
+/* .content--block h3{
+    display: flex;
+    justify-content: flex-start;
+    font-weight: 800;
+    color: #60D2EC;
+} */
+
+/* .delete--icon{
+    background-color: hsla(357, 100%, 21%, 0);
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    list-style: none;
+    margin-top: 2px;
+    padding: 4px 5px;
+}
+
+.delete--icon:hover{
+    background-color: hsl(357.14deg 100% 20.59%);
+    transition-duration: 0.25s;
+    color: #FFDAD6;
+} */
+
+/* #content--text .delete--icon{
+    opacity: 0;
+}
+
+#content--text:hover .delete--icon{
+    opacity: 1;
+    transition-duration: 0.25s;
+} */
+
+
+/* .edit--icon{
+    background-color: hsla(357, 100%, 21%, 0);
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    list-style: none;
+    margin-top: 2px;
+    padding: 4px 5px;
+}
+
+.edit--icon:hover{
+    background-color:#414E82;
+    transition-duration: 0.25s;
+    color: #D3E4FF;
+}
+
+#content--text .edit--icon{
+    opacity: 0;
+}
+
+#content--text:hover .edit--icon{
+    opacity: 1;
+    transition-duration: 0.25s;
+} */
