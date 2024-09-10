@@ -34,7 +34,12 @@ const DiaryEntry = ({change, setChange}) => {
         const urlContent = renderToString(content.textContent);
         const urlList = renderToString(list.innerText.replaceAll(/^/gm,"-"));
         const update = urlContent + urlList
-        axios.put("https://localhost:7071/api/Entry/"+id+"?entry_content="+update);
+        if(list.innerHTML != ""){
+            axios.put("https://localhost:7071/api/Entry/"+id+"?entry_content="+update);
+        }
+        else{
+            axios.put("https://localhost:7071/api/Entry/"+id+"?entry_content="+urlContent);
+        }
     }
 
     return(
