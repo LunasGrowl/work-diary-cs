@@ -16,14 +16,14 @@ const DiaryEntry = ({change, setChange}) => {
 
     // Loads all entries from the database and creates them as components
     const loadEntries=async()=>{
-        const result =await axios.get("http://localhost:8080/entry");
+        const result =await axios.get("https://localhost:7071/api/Entry");
         setEntry(result.data)
         console.log(result.data);
     }
 
     // Deletes an entry from the database 
     const deleteEntry = async(id)=>{
-        axios.delete("http://localhost:8080/entry/"+id);
+        axios.delete("https://localhost:7071/api/Entry/"+id);
         console.log(id);
         setChange('1');
     }
@@ -34,7 +34,7 @@ const DiaryEntry = ({change, setChange}) => {
         const urlContent = renderToString(content.textContent);
         const urlList = renderToString(list.innerText.replaceAll(/^/gm,"-"));
         const update = urlContent + urlList
-        axios.put("http://localhost:8080/entry/"+id+"?entry_content="+update);
+        axios.put("https://localhost:7071/api/Entry/"+id+"?entry_content="+update);
     }
 
     return(
@@ -44,8 +44,8 @@ const DiaryEntry = ({change, setChange}) => {
                     <div className="content--block flex" id={entry.id} >
                         <div id = "id--child"className="content--title ">
                             <div className="flex flex-row items-center">
-                                <h3 className="font-semibold  text-cyan-800 dark:text-cyan-400">{entry.entry_day}</h3>
-                                <p className="content--date pl-11 text-zinc-700 dark:text-zinc-500">{entry.entry_date}</p>
+                                <h3 className="font-semibold  text-cyan-800 dark:text-cyan-400">{entry.entry_Day}</h3>
+                                <p className="content--date pl-11 text-zinc-700 dark:text-zinc-500">{entry.entry_Date}</p>
                             </div>
                             <div className="flex-row  flex justify-end">
                                 <span onClick = {() => editEntry(entry.id)} id ={entry.id} className="edit--icon material-symbols-outlined h-6 transition h-6 rounded-lg opacity-0  group-hover:opacity-100 hover:text-indigo-800 hover:bg-indigo-300 hover:dark:text-indigo-300 hover:dark:bg-indigo-800 cursor-pointer inline-block list-none mt-1 py-1 px-1" >save</span>
@@ -53,9 +53,9 @@ const DiaryEntry = ({change, setChange}) => {
                             </div>
                         </div>
                         <div className="content--entry max-w-max" contentEditable = "true" id="content--content">
-                            <p className="break-words text-justify flex">{entry.entry_content.split("-")[0]}</p>
+                            <p className="break-words text-justify flex">{entry.entry_Content.split("-")[0]}</p>
                             <ul className="text-left">
-                                {entry.entry_content.split("-").slice(1).map(split =>(
+                                {entry.entry_Content.split("-").slice(1).map(split =>(
                                     <li className="italic">{split}</li>
                                 ))}
                             </ul>

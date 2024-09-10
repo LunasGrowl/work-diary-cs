@@ -2,6 +2,8 @@ using Backend.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
+var MyAllowSpecifiOrigins = "_myAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,6 +17,16 @@ builder.Services.AddDbContext<LogContext>(options =>
     options.UseInMemoryDatabase("Log");
 });
 
+
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(name: MyAllowSpecifiOrigins, policy =>
+//    {
+//        policy.WithOrigins("http://localhost:5173", "http://localhost:5173/");
+//    });
+  
+//});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,6 +36,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:5173"));
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

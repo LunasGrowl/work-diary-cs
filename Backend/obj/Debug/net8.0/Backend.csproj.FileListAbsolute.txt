@@ -33,3 +33,4 @@ C:\Users\Administrator\source\repos\Backend\Backend\obj\Debug\net8.0\ref\Backend
 C:\Users\Administrator\source\repos\Backend\Backend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\Administrator\source\repos\Backend\Backend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\Administrator\source\repos\Backend\Backend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\Administrator\source\repos\Backend\Backend\obj\Debug\net8.0\Backend.sourcelink.json

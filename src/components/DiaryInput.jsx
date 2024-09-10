@@ -5,6 +5,9 @@ import axios from "axios";
 
 const today = new Date();
 
+const result = await axios.get("https://localhost:7071/api/Entry");
+const size = result.data.legnth;
+
 function getDate(){
     const day = today.getDate();
     const month = today.getMonth()+1;
@@ -22,9 +25,11 @@ function getDay(){
 const DiaryInput = ({setChange}) => {
     const[currentDate] = useState(getDate());
     const[currentDay] = useState(getDay());
-    
-    
+
+
     const [entry,setEntry] = useState({
+        
+        id: size,
         entry_date:getDate(),
         entry_day:getDay(),
         entry_content:""
@@ -36,8 +41,9 @@ const DiaryInput = ({setChange}) => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:8080/entry/add",entry);
+        await axios.post("https://localhost:7071/api/Entry",entry);
         setChange(('1'));
+        console.log(entry);
 
     }
 

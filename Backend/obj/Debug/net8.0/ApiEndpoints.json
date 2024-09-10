@@ -55,9 +55,9 @@
         "IsRequired": true
       },
       {
-        "Name": "entry",
-        "Type": "Backend.Models.Entry",
-        "IsRequired": true
+        "Name": "entry_content",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

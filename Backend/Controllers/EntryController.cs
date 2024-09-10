@@ -48,14 +48,16 @@ namespace Backend.Controllers
         }
 
         [HttpPut, Route("{id}")]
-        public async Task<ActionResult> putEntry(int id, Entry entry)
+        public async Task<ActionResult> putEntry(int id, string entry_content)
         {
-            _logContext.Entry(entry).State = EntityState.Modified;
-
-            if (id != entry.Id) 
+            var entry = _logContext.Entries.Find(id);
+            if (entry == null)
             {
                 return NotFound();
             }
+
+            entry.Entry_Content = entry_content;
+            
 
             await _logContext.SaveChangesAsync();
 
