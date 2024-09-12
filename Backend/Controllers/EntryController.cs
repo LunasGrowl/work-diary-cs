@@ -1,5 +1,4 @@
-﻿using Backend.Context;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Backend.Models;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -12,19 +11,19 @@ namespace Backend.Controllers
     public class EntryController : ControllerBase
     {
 
-        private readonly LogContext _logContext;
+        private readonly EntryContext _logContext;
 
-        public EntryController(LogContext logContext)
+        public EntryController(EntryContext logContext)
         {
             _logContext = logContext;
 
-            _logContext.Database.EnsureCreated();
+            //_logContext.Database.EnsureCreated();
         }
 
         [HttpGet]
-        public ActionResult getAllEntry()
+        public async Task<ActionResult<List<Entry>>> getAllEntry()
         {
-            return Ok(_logContext.Entries.ToArray());
+            return Ok(await _logContext.Entries.ToListAsync());
         }
 
         [HttpGet, Route("{id}")]

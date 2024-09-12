@@ -3,32 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\source\\repos\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|c:\\users\\administrator\\source\\repos\\backend\\backend\\controllers\\entrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\entrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|c:\\users\\administrator\\source\\repos\\backend\\backend\\models\\entry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|solutionrelative:backend\\models\\entry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|c:\\users\\administrator\\source\\repos\\backend\\backend\\database.db||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|solutionrelative:backend\\database.db||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|c:\\users\\administrator\\source\\repos\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|c:\\users\\administrator\\source\\repos\\backend\\backend\\context\\logcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|solutionrelative:backend\\context\\logcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|c:\\users\\administrator\\source\\repos\\backend\\backend\\backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|solutionrelative:backend\\backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|c:\\users\\administrator\\source\\repos\\backend\\backend\\models\\modelbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|solutionrelative:backend\\models\\modelbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|c:\\users\\administrator\\source\\repos\\backend\\backend\\controllers\\entrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\entrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|c:\\users\\administrator\\source\\repos\\backend\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|solutionrelative:backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|c:\\users\\administrator\\source\\repos\\backend\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|solutionrelative:backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|c:\\users\\administrator\\source\\repos\\backend\\backend\\backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
       "RelativeMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|solutionrelative:backend\\backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|c:\\users\\administrator\\source\\repos\\backend\\backend\\models\\entrycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|solutionrelative:backend\\models\\entrycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|c:\\users\\administrator\\source\\repos\\backend\\backend\\models\\entry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|solutionrelative:backend\\models\\entry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|c:\\users\\administrator\\source\\repos\\backend\\backend\\models\\modelbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3936CCFB-5765-4DAF-9D3C-9FF5513FC5C4}|Backend\\Backend.csproj|solutionrelative:backend\\models\\modelbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,54 +46,106 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "database.db",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\database.db",
+              "RelativeDocumentMoniker": "Backend\\database.db",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\database.db",
+              "RelativeToolTip": "Backend\\database.db",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI8SURBVDhPdVNLT1NBGD3a23gJKaJUwsIEUaMoL2NsGyqxoCYEDRuKi0ZW3WHkL0D8BWqkJsLKQlsX9bGrNhqqRKRutCVp1BhFEiUxVyVx0Ud67/DN3EcvsZ7ck2/uN9/MnDkzswsGYrEY0xgD0zQwippGbabBzPEoORxb5Upl6Nrk5HsxiBeaWFhcZKqqWqxyVmuMx\u002BOsUCiwufn5P3dmI6eMYdhtRLEKh0pRVTlVQZpIkMPtduOs398sSdKSSBBqE5hqKJBovW1B/49Go0ilUihXys0iQZCMKPbMYQ7OrmaRza7C6/PBRxwbC4oe8gGzkYio4bApIPOM9v3oAppa23DpSgiyuw13781ZfRwa1ZqwJuAu86p8Lg//uQA6D7cjt/IKPUcOof/CMNbyearSp6HjEpHjHxMzmSU0NjTgUTKJUCiEJw\u002BT2OtyUT5DKkXJjtPbqYAQGBxEsVhEcHwciUQCl0dHsf5tA1W5CS\u002BWV1AqlcivOlvQZTH09vTi9fJLfF7fgGcggHcfvkBpbEc4HIay/zje5tb\u002Bp0A3kXPi6gSUzR94/CCON3Qaw8da8PzrX4x0HsD3n7/rm1i7BxSJHq8X16em4OnrRvrTL1zscOHpRwVn\u002Brrqmyjugf4JmjjdfQL7lALSz9Locm7hYGuL5ReHTUFNlgAVcVV7ZBlDA/0IjpzHyaMdkOnfXmvzgN9BenGSQ6dTgrMORa1tC9ZzvnnrNm2NjKROvjI/KhGNnFiA2vozZ7gxM01jgW0oG0\u002BFgH6cagAAAABJRU5ErkJggg==",
+              "WhenOpened": "2024-09-12T13:46:51.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EntryContext.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Models\\EntryContext.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\EntryContext.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Models\\EntryContext.cs",
+              "RelativeToolTip": "Backend\\Models\\EntryContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T12:24:14.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\appsettings.json",
+              "RelativeDocumentMoniker": "Backend\\appsettings.json",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\appsettings.json",
+              "RelativeToolTip": "Backend\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-12T12:05:20.09Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Backend",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Backend.csproj",
+              "RelativeDocumentMoniker": "Backend\\Backend.csproj",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Backend.csproj",
+              "RelativeToolTip": "Backend\\Backend.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-12T11:57:05.907Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Entry.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Models\\Entry.cs",
               "RelativeDocumentMoniker": "Backend\\Models\\Entry.cs",
               "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Models\\Entry.cs",
               "RelativeToolTip": "Backend\\Models\\Entry.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T10:46:54.302Z",
+              "WhenOpened": "2024-09-11T13:26:14.515Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Program.cs",
               "RelativeDocumentMoniker": "Backend\\Program.cs",
               "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Program.cs",
               "RelativeToolTip": "Backend\\Program.cs",
-              "ViewState": "AgIAAAMAAADgMjMzM7MiwBkAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAACAzczMzMwHwBAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-05T12:43:00.01Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "EntryController.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Controllers\\EntryController.cs",
               "RelativeDocumentMoniker": "Backend\\Controllers\\EntryController.cs",
               "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Controllers\\EntryController.cs",
               "RelativeToolTip": "Backend\\Controllers\\EntryController.cs",
-              "ViewState": "AgIAAB4AAAAAyMzMzEwmwDcAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAADwvxsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-05T10:21:50.13Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "ModelBuilder.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Models\\ModelBuilder.cs",
               "RelativeDocumentMoniker": "Backend\\Models\\ModelBuilder.cs",
@@ -93,43 +153,21 @@
               "RelativeToolTip": "Backend\\Models\\ModelBuilder.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T13:59:58.403Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LogContext.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Context\\LogContext.cs",
-              "RelativeDocumentMoniker": "Backend\\Context\\LogContext.cs",
-              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Context\\LogContext.cs",
-              "RelativeToolTip": "Backend\\Context\\LogContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T12:32:31.441Z"
+              "WhenOpened": "2024-09-05T13:59:58.403Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Backend\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Backend\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-09T13:02:50.685Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "Backend.http",
               "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Backend.http",
               "RelativeDocumentMoniker": "Backend\\Backend.http",
               "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Backend\\Backend\\Backend.http",
               "RelativeToolTip": "Backend\\Backend.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-09-09T13:02:43.395Z"
+              "WhenOpened": "2024-09-09T13:02:43.395Z",
+              "EditorCaption": ""
             }
           ]
         }
