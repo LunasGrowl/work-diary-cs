@@ -49,6 +49,7 @@ const DiaryInput = ({setChange}) => {
 
     const notification = document.getElementById('form--notification');
     function notificationPopup(){
+        notification.innerHTML = "Entry Sent"
         notification.classList.add('fade');
         setTimeout(() => {notification.classList.remove('fade');}, 2000);
         
@@ -68,8 +69,8 @@ const DiaryInput = ({setChange}) => {
                 <div className="flex flex-col ">
                     <textarea spellCheck="false" className="text-base h-44 outline-0 resize-none rounded-xl bg-zinc-200 text-black dark:bg-zinc-900 dark:text-white" autoComplete = "off" id="form--input" value={entry_content} name = "entry_content" type="text" onChange={(e)=>onInputChange(e)}/>
                     <div className="pt-2 flex justify-end">
-                        <p id = "form--notification">Entry Submitted</p>
-                        <button onClick = {notificationPopup} className = "transition m-0  px-3.5 leading-5 text-base font-semibold cursor-pointer border-0 da rounded-lg bg-cyan-300 text-cyan-700 hover:bg-cyan-400 bg-opacity-85 dark:text-cyan-300 dark:bg-cyan-700 dark:bg-opacity-75 dark:hover:bg-cyan-700" id = "form--button" type = "submit">Add</button>
+                        <p id = "form--notification" className="text-indigo-800 bg-indigo-300 dark:text-indigo-300 dark:bg-indigo-900">Placeholder</p>
+                        <button onClick = {notificationPopup} className = "transition m-0  px-3.5 leading-5 text- font-medium cursor-pointer border-0 da rounded-lg bg-cyan-300 text-cyan-700 hover:bg-cyan-400 bg-opacity-85 dark:text-cyan-300 dark:bg-cyan-700 dark:bg-opacity-75 dark:hover:bg-cyan-700" id = "form--button" type = "submit">Add</button>
                     </div>
                 </div>
             </form>

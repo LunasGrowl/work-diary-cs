@@ -16,6 +16,7 @@
     position: absolute;
     border-radius: 10px;
     cursor: pointer;
+    border-color: aqua;
     
   }
   .circle {
