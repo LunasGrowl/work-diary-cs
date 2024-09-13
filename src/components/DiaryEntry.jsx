@@ -64,11 +64,11 @@ const DiaryEntry = ({change, setChange}) => {
                             </div>
                             <div className="flex-row  flex justify-end">
                                 <label id="update--label" className="mt-1 py-1 px-2  bg-indigo-300 text-indigo-800 dark:text-indigo-300 dark:bg-indigo-900" >Entry Saved</label>
-                                <span onClick = {() => editEntry(entry.id)} id ={entry.id} className="edit--icon material-symbols-outlined h-6 transition h-6 rounded-lg opacity-0  group-hover:opacity-100 hover:text-indigo-800 hover:bg-indigo-300 hover:dark:text-indigo-300 hover:dark:bg-indigo-800 cursor-pointer inline-block list-none mt-1 py-1 px-1" >save</span>
+                                <span onClick = {() => editEntry(entry.id)} id ={entry.id} className="edit--icon material-symbols-outlined transition h-6 rounded-lg opacity-0  group-hover:opacity-100 hover:text-indigo-800 hover:bg-indigo-300 hover:dark:text-indigo-300 hover:dark:bg-indigo-800 cursor-pointer inline-block list-none mt-1 py-1 px-1" >save</span>
                                 <span onClick = {() => deleteEntry(entry.id)} id ={entry.id} className="delete--icon material-symbols-outlined transition h-6 rounded-lg opacity-0  group-hover:opacity-100 hover:text-red-800 hover:bg-red-300 hover:dark:text-red-300 hover:dark:bg-red-800 cursor-pointer inline-block list-none mt-1 py-1 px-1" >delete</span>
                             </div>
                         </div>
-                        <div className="content--entry max-w-max" contentEditable = "true" id="content--content">
+                        <div className="content--entry max-w-max" spellCheck = "false" contentEditable = "true" id="content--content">
                             <p className="break-words text-justify flex">{entry.entry_Content.split("-")[0]}</p>
                             <ul className="text-left">
                                 {entry.entry_Content.split("-").slice(1).map(split =>(

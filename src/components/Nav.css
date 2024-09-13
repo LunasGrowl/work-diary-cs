@@ -10,7 +10,7 @@
     visibility: hidden;
   }
   .label {
-    background-color: black;
+    /* background-color: black; */
     height: 20px;
     width: 40px;
     position: absolute;
@@ -22,7 +22,7 @@
   .circle {
     width: 18px;
     height: 18px;
-    background-color: white;
+    /* background-color: white; */
     position: absolute;
     top: 1px;
     left: 1px;
@@ -33,11 +33,11 @@
   
   
   .input:checked + .label {
-    background-color: white;
+    /* background-color: white; */
   }
   
   .input:checked + .label .circle {
-   background-color: black;
+   /* background-color: black; */
    animation: toggleOn .3s linear forwards;
   }
   

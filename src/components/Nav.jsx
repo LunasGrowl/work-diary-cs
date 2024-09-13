@@ -1,9 +1,27 @@
 import React from 'react'
 import "./Nav.css";
 
+
+
 const NavBar = () => {
+
+  const theme = localStorage.getItem('theme');
+  if(theme == null){
+    localStorage.setItem('theme', 'dark');
+  } 
+  if(theme == "light"){
+    document.documentElement.classList.remove('dark')
+  }
+
+ 
 function toggleTheme(){
   document.documentElement.classList.toggle("dark")
+  if(localStorage.getItem('theme') == 'dark'){localStorage.setItem('theme', 'light')}
+  else{
+    localStorage.setItem('theme', 'dark');
+  }
+
+  
 }
 
   return (
@@ -13,8 +31,8 @@ function toggleTheme(){
         <p className='text-2xl m-0 font-medium'>Tata Log<span className='text-xs'>-Logo by William Len</span></p>
         <div id = "ld--toggle" className='flex justify-end'> 
           <input class="input" type="checkbox" name="darkmode" id="dark-mode"/>
-          <label onClick={toggleTheme} for="dark-mode" class="label">
-            <span class="circle"></span>
+          <label onClick={toggleTheme} for="dark-mode" class="label dark:bg-cyan-500 bg-cyan-700">
+            <span class="circle bg-slate-100 dark:bg-zinc-950"></span>
           </label>
         </div>
       </div>
