@@ -46,7 +46,7 @@ const DiaryEntry = ({change, setChange}) => {
     
     function notificationPopup(id){
         const notification = document.getElementById(id).getElementsByTagName('label')[0];
-        notification.innerHTML = "Entry Updated"
+        //notification.innerHTML = "Entry Updated"
         notification.classList.add('fade');
         setTimeout(() => {notification.classList.remove('fade');}, 2000);
         

@@ -2,6 +2,10 @@ import React from "react";
 import { useState } from "react";
 import "./DiaryInput.css";
 import axios from "axios";
+import "./DiaryInput/Notification";
+import Notification from "./DiaryInput/Notification";
+import SubmitButton from "./DiaryInput/SubmitButton";
+
 
 const today = new Date();
 
@@ -26,9 +30,12 @@ const DiaryInput = ({setChange}) => {
     const[currentDate] = useState(getDate());
     const[currentDay] = useState(getDay());
 
+    const[notification , setNotification] = useState({
+        style:"opacity-0",
+        content:"",
+    })
 
     const [entry,setEntry] = useState({
-        
         id: size,
         entry_date:getDate(),
         entry_day:getDay(),
@@ -41,19 +48,14 @@ const DiaryInput = ({setChange}) => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        await axios.post("https://localhost:7071/api/Entry",entry);
-        setChange(('1'));
-        console.log(entry);
-
-    }
-
-    const notification = document.getElementById('form--notification');
-    function notificationPopup(){
-        notification.innerHTML = "Entry Sent"
-        notification.classList.add('fade');
-        setTimeout(() => {notification.classList.remove('fade');}, 2000);
-        
-
+        try{
+            await axios.post("https://localhost:7071/api/Entry",entry);
+            setNotification({style:"text-indigo-800 bg-indigo-300 dark:text-indigo-300 dark:bg-indigo-900 opacity-1" , content : "Entry Sent" })
+            await setChange(('1'));
+        }catch(err){
+            setNotification({style:"text-red-800 bg-red-300 dark:text-red-300 dark:bg-red-900 opacity-1" , content : "Entry Failed"})
+        }
+        setTimeout(()=> {setNotification({...notification})},3000)
     }
 
     return(
@@ -69,8 +71,8 @@ const DiaryInput = ({setChange}) => {
                 <div className="flex flex-col ">
                     <textarea spellCheck="false" className="text-base h-44 outline-0 resize-none rounded-xl bg-zinc-200 text-black dark:bg-zinc-900 dark:text-white" autoComplete = "off" id="form--input" value={entry_content} name = "entry_content" type="text" onChange={(e)=>onInputChange(e)}/>
                     <div className="pt-2 flex justify-end">
-                        <p id = "form--notification" className="text-indigo-800 bg-indigo-300 dark:text-indigo-300 dark:bg-indigo-900">Placeholder</p>
-                        <button onClick = {notificationPopup} className = "transition m-0  px-3.5 leading-5 text- font-medium cursor-pointer border-0 da rounded-lg bg-cyan-300 text-cyan-700 hover:bg-cyan-400 bg-opacity-85 dark:text-cyan-300 dark:bg-cyan-700 dark:bg-opacity-75 dark:hover:bg-cyan-700" id = "form--button" type = "submit">Add</button>
+                        <Notification  type  = {notification.style} content = {notification.content} /> 
+                        <SubmitButton/>
                     </div>
                 </div>
             </form>
