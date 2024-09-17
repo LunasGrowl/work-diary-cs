@@ -1,29 +1,27 @@
 import React from 'react'
 import "./Nav.css";
 
-
+// Gets the theme that has been previously loaded into local storage
+// If no theme stored (first time launching) will apply 'dark' theme
+const theme = localStorage.getItem('theme');
+if(theme == null){
+  localStorage.setItem('theme', 'dark');
+} 
+if(theme == "light"){ // Checks if 'light' theme is stored and removes dark as it's default
+  document.documentElement.classList.remove('dark')
+}
 
 const NavBar = () => {
 
-  const theme = localStorage.getItem('theme');
-  if(theme == null){
-    localStorage.setItem('theme', 'dark');
-  } 
-  if(theme == "light"){
-    document.documentElement.classList.remove('dark')
+  // Add or remove 'dark' theme
+  // Set current theme in local storage
+  function toggleTheme(){
+    document.documentElement.classList.toggle("dark")
+    if(localStorage.getItem('theme') == 'dark'){localStorage.setItem('theme', 'light')}
+    else{localStorage.setItem('theme', 'dark'); }
   }
 
- 
-function toggleTheme(){
-  document.documentElement.classList.toggle("dark")
-  if(localStorage.getItem('theme') == 'dark'){localStorage.setItem('theme', 'light')}
-  else{
-    localStorage.setItem('theme', 'dark');
-  }
-
-  
-}
-
+  // HTML for nav component
   return (
     <div id= "nav--bar" className='sticky top-0 bg-zinc-200 dark:bg-zinc-900 p-4 border-b-4 border-cyan-500 dark:border-cyan-300 ' >
       <div className='w-full flex flex-row justify-between items-center'>

@@ -1,5 +1,6 @@
 import React from "react";
 
+// Submit button component
 function SubmitButton(){
     return(
         <>

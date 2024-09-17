@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
-import {useState} from "react";
+import React  from "react";
 
+// Notification Component
+// Changes depending on what styling is passed through
 function Notification (prop){
     return(
         <div>

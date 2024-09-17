@@ -1,51 +1,60 @@
 import React from "react";
 import { useState } from "react";
-import "./DiaryInput.css";
 import axios from "axios";
-import "./DiaryInput/Notification";
+import "./DiaryInput.css";
 import Notification from "./DiaryInput/Notification";
 import SubmitButton from "./DiaryInput/SubmitButton";
 
+// Creates todays date object (YYYY-MM-DDTHH:mm:ss.sssZ)
+const today = new Date(); 
 
-const today = new Date();
+// Returns the day of the week
+function getDay(){
+    const dayOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ]; // Array of days in the week
+    return dayOfWeek[today.getDay()]; // Return todays day via the index in the array
+}
 
-const result = await axios.get("https://localhost:7071/api/Entry");
-const size = result.data.legnth;
-
+// Returns the date as custom string (DD-MM-YYYYY)
 function getDate(){
     const day = today.getDate();
     const month = today.getMonth()+1;
     const year = today.getFullYear();
     return `${day}/${month}/${year}`;
-    
 }
 
-const dayOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ];
+// Retrives the size of database for ID value
+// Potentially not being used as database will auto incrament, made for early development
+const result = await axios.get("https://localhost:7071/api/Entry");
+const size = result.data.legnth;
 
-function getDay(){
-    return dayOfWeek[today.getDay()];
-}
 
 const DiaryInput = ({setChange}) => {
+    // Creates states for the current day to use in form header
     const[currentDate] = useState(getDate());
     const[currentDay] = useState(getDay());
 
+    // Creates state for notification component
     const[notification , setNotification] = useState({
         style:"opacity-0",
         content:"",
     })
 
+    // Creates state for entry object
     const [entry,setEntry] = useState({
         id: size,
         entry_date:getDate(),
         entry_day:getDay(),
         entry_content:""
     })
+
+    // Changes the values of the entry object through inputs in the textfield
     const {entry_date,entry_day,entry_content} = entry
     const onInputChange = (e) => {
         setEntry({...entry,[e.target.name]:e.target.value})
     };
 
+    // Method for submiting entries into the database from form element
+    // The method will also change the styling of Notification Lable depending on the success of the entry
     const onSubmit = async (e) => {
         e.preventDefault();
         try{
@@ -55,13 +64,14 @@ const DiaryInput = ({setChange}) => {
         }catch(err){
             setNotification({style:"text-red-800 bg-red-300 dark:text-red-300 dark:bg-red-900 opacity-1" , content : "Entry Failed"})
         }
-        setTimeout(()=> {setNotification({...notification})},3000)
+        setTimeout(()=> {setNotification({...notification})},3000) //Notification dissapears after a period of time
     }
 
+    // HTML Form Structure
     return(
         <div id="form--block" className="w-9/12">
             <form onSubmit={(e)=> onSubmit(e)}>
-                <div id = "form--heading" className="shrink flex justify-between flex-row">
+                <div id = "form--heading" className="shrink flex justify-between flex-row"> 
                     <p className= "font-semibold pt-8">What did you do?</p>
                     <div id="form--date"className="flex" >
                         <p className = "font-medium text-zinc-700 dark:text-zinc-500 italic pt-8 form--day--display pr-4" value = {entry_day} name = "entry_day" >{currentDay}</p>

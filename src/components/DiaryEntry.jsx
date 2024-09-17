@@ -4,30 +4,30 @@ import axios from "axios"
 import { renderToString } from "react-dom/server";
 
 const DiaryEntry = ({change, setChange}) => {
-
+    
+    // Creates a state for a list of entries
     const [entry,setEntry] = useState([])
 
-    useEffect(()=>{
-        loadEntries();
-        setChange('0')
-    
-         
-    },[change]);
-
-    // Loads all entries from the database and creates them as components
+    // Retrives all entries from database and saves into 'entry' state
     const loadEntries=async()=>{
         const result =await axios.get("https://localhost:7071/api/Entry");
         setEntry(result.data)
-        console.log(result.data);
     }
+
+    // Retrives entries from database on any change
+    // Change state used to indicate if database has been altered
+    useEffect(()=>{
+        loadEntries();
+        setChange('0')
+    },[change]);
 
     // Deletes an entry from the database 
     const deleteEntry = async(id)=>{
         axios.delete("https://localhost:7071/api/Entry/"+id);
-        console.log(id);
         setChange('1');
     }
 
+    // Edits content of an entry
     const editEntry = async(id)=>{
         const content = document.getElementById(id).getElementsByTagName("p")[1];
         const list = document.getElementById(id).getElementsByTagName("ul")[0];
@@ -43,15 +43,15 @@ const DiaryEntry = ({change, setChange}) => {
         notificationPopup(id);
     }
 
-    
+    // Displays a notification on successfull edit
     function notificationPopup(id){
         const notification = document.getElementById(id).getElementsByTagName('label')[0];
         //notification.innerHTML = "Entry Updated"
         notification.classList.add('fade');
         setTimeout(() => {notification.classList.remove('fade');}, 2000);
-        
     }
 
+    // HTML of entry builder
     return(
         <div className = "flex-col flex w-9/12" id = "content--container">
             {entry.toReversed().map((entry) =>(
