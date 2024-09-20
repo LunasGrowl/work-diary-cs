@@ -23,7 +23,9 @@ namespace Backend.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Entry>>> getAllEntry()
         {
-            return Ok(await _logContext.Entries.ToListAsync());
+            var list = await _logContext.Entries.ToListAsync();
+            list = list.OrderBy(e => e.Entry_Date).ThenBy(e => e.Entry_Day).ToList();
+            return Ok(list);
         }
 
         [HttpGet, Route("{id}")]

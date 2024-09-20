@@ -82,6 +82,7 @@ const DiaryInput = ({setChange}) => {
                     <div id="form--date"className="flex" >
                         <p className = "font-medium text-zinc-700 dark:text-zinc-500 italic pt-8 form--day--display pr-4"   name = "entry_day" >{entry_day}</p>
                         <input onChange={(e)=>onInputChangeDate(e)} id = "dateHeader" type ="date"  className = "my-2 bg-slate-100 text-lg border-0 font-medium text-zinc-700 dark:text-zinc-500 italic pt-8" defaultValue= {new Date().toISOString().substr(0,10)} name = "entry_date" />
+                        
                     </div>
                 </div>
                 <div className="flex flex-col ">
