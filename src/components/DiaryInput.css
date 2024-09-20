@@ -104,3 +104,28 @@
     outline-width: 0;
 }
  */
+
+ input[type="date"] { 
+    background: transparent;
+    border: none;
+    color-scheme: dark;
+    font-family: "Inter", sans-serif;
+  }
+
+  input[type="date"]:focus-visible{
+    outline: none;
+  }
+
+
+#dateHeader::-webkit-calendar-picker-indicator{
+    filter: brightness(50%) !important;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: larger;
+}
+  ::-webkit-calendar-picker-indicator{
+    filter: brightness(0%);
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: larger;
+  }

@@ -10,8 +10,12 @@ const DiaryEntry = ({change, setChange}) => {
 
     // Retrives all entries from database and saves into 'entry' state
     const loadEntries=async()=>{
-        const result =await axios.get("https://localhost:7071/api/Entry");
-        setEntry(result.data)
+        try {
+            const result = await axios.get("https://localhost:7071/api/Entry");
+            setEntry(result.data)
+        }catch(error){
+            console.log("Yo that api kinda offline. You god bro?")
+        }
     }
 
     // Retrives entries from database on any change

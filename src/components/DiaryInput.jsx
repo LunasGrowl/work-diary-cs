@@ -9,9 +9,10 @@ import SubmitButton from "./DiaryInput/SubmitButton";
 const today = new Date(); 
 
 // Returns the day of the week
-function getDay(){
-    const dayOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ]; // Array of days in the week
-    return dayOfWeek[today.getDay()]; // Return todays day via the index in the array
+function getDay(val){
+    const day = new Date(val)
+    const dayOfWeek = ['Sunday' ,'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ]; // Array of days in the week
+    return dayOfWeek[day.getDay()]; // Return todays day via the index in the array
 }
 
 // Returns the date as custom string (DD-MM-YYYYY)
@@ -19,19 +20,19 @@ function getDate(){
     const day = today.getDate();
     const month = today.getMonth()+1;
     const year = today.getFullYear();
-    return `${day}/${month}/${year}`;
+    return `${year}-${month}-${day}`;
 }
 
-// Retrives the size of database for ID value
-// Potentially not being used as database will auto incrament, made for early development
-const result = await axios.get("https://localhost:7071/api/Entry");
-const size = result.data.legnth;
+// // Retrives the size of database for ID value
+// // Potentially not being used as database will auto incrament, made for early development
+// const result = await axios.get("https://localhost:7071/api/Entry");
+// const size = result.data.legnth;
 
 
 const DiaryInput = ({setChange}) => {
     // Creates states for the current day to use in form header
-    const[currentDate] = useState(getDate());
-    const[currentDay] = useState(getDay());
+    const[currentDate] = useState(new Date().toISOString().substr(0,10));
+    const[currentDay] = useState(getDay(today));
 
     // Creates state for notification component
     const[notification , setNotification] = useState({
@@ -41,16 +42,21 @@ const DiaryInput = ({setChange}) => {
 
     // Creates state for entry object
     const [entry,setEntry] = useState({
-        id: size,
-        entry_date:getDate(),
-        entry_day:getDay(),
+        //id: size,
+        entry_date: currentDate,
+        entry_day: currentDay,
         entry_content:""
     })
+
 
     // Changes the values of the entry object through inputs in the textfield
     const {entry_date,entry_day,entry_content} = entry
     const onInputChange = (e) => {
         setEntry({...entry,[e.target.name]:e.target.value})
+    };
+
+    const onInputChangeDate = (e) => {
+        setEntry({...entry,[e.target.name]:e.target.value, entry_day:getDay(e.target.value)})
     };
 
     // Method for submiting entries into the database from form element
@@ -74,8 +80,8 @@ const DiaryInput = ({setChange}) => {
                 <div id = "form--heading" className="shrink flex justify-between flex-row"> 
                     <p className= "font-semibold pt-8">What did you do?</p>
                     <div id="form--date"className="flex" >
-                        <p className = "font-medium text-zinc-700 dark:text-zinc-500 italic pt-8 form--day--display pr-4" value = {entry_day} name = "entry_day" >{currentDay}</p>
-                        <p className = "font-medium text-zinc-700 dark:text-zinc-500 italic pt-8 form--date--display" value = {entry_date} name = "currentDate">{currentDate}</p>
+                        <p className = "font-medium text-zinc-700 dark:text-zinc-500 italic pt-8 form--day--display pr-4"   name = "entry_day" >{entry_day}</p>
+                        <input onChange={(e)=>onInputChangeDate(e)} id = "dateHeader" type ="date"  className = "my-2 bg-slate-100 text-lg border-0 font-medium text-zinc-700 dark:text-zinc-500 italic pt-8" defaultValue= {new Date().toISOString().substr(0,10)} name = "entry_date" />
                     </div>
                 </div>
                 <div className="flex flex-col ">

@@ -47,7 +47,7 @@ namespace Backend.Controllers
         }
 
         [HttpPut, Route("{id}")]
-        public async Task<ActionResult> putEntry(int id, string entry_content)
+        public async Task<ActionResult> putEntry(int id, string entry_content, string entry_day , string entry_date)
         {
             var entry = _logContext.Entries.Find(id);
             if (entry == null)
@@ -56,6 +56,8 @@ namespace Backend.Controllers
             }
 
             entry.Entry_Content = entry_content;
+            entry.Entry_Date = entry_date;
+            entry.Entry_Day = entry_day;
             
 
             await _logContext.SaveChangesAsync();

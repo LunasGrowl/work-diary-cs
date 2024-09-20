@@ -116,3 +116,11 @@
 #update--label.fade{
     opacity: 1;
 }
+
+
+#content--text:hover ::-webkit-calendar-picker-indicator{
+    filter: brightness(50%) !important;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: larger;
+  }
