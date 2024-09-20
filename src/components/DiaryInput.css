@@ -124,7 +124,7 @@
     font-size: larger;
 }
   ::-webkit-calendar-picker-indicator{
-    filter: brightness(0%);
+    filter: brightness(0%) opacity(0%);
     cursor: pointer;
     border-radius: 5px;
     font-size: larger;
