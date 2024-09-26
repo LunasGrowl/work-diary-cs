@@ -15,13 +15,13 @@ function getDay(val){
     return dayOfWeek[day.getDay()]; // Return todays day via the index in the array
 }
 
-// Returns the date as custom string (DD-MM-YYYYY)
-function getDate(){
-    const day = today.getDate();
-    const month = today.getMonth()+1;
-    const year = today.getFullYear();
-    return `${year}-${month}-${day}`;
-}
+// // Returns the date as custom string (DD-MM-YYYYY)
+// function getDate(){
+//     const day = today.getDate();
+//     const month = today.getMonth()+1;
+//     const year = today.getFullYear();
+//     return `${year}-${month}-${day}`;
+// }
 
 // // Retrives the size of database for ID value
 // // Potentially not being used as database will auto incrament, made for early development
@@ -33,6 +33,7 @@ const DiaryInput = ({setChange}) => {
     // Creates states for the current day to use in form header
     const[currentDate] = useState(new Date().toISOString().substr(0,10));
     const[currentDay] = useState(getDay(today));
+    const[currentTime] = useState(new Date().toLocaleTimeString('en-US'));
 
     // Creates state for notification component
     const[notification , setNotification] = useState({
@@ -45,7 +46,9 @@ const DiaryInput = ({setChange}) => {
         //id: size,
         entry_date: currentDate,
         entry_day: currentDay,
-        entry_content:""
+        entry_content:"",
+        entry_modify_date: currentDate,
+        entry_modify_time: currentTime
     })
 
 

@@ -58,7 +58,7 @@ namespace Backend.Controllers
         }
 
         [HttpPut, Route("{id}")]
-        public async Task<ActionResult> putEntry(int id, string entry_content, string entry_day , string entry_date)
+        public async Task<ActionResult> putEntry(int id, string entry_content, string entry_day , string entry_date, string entry_modify_date, string entry_modify_time)
         {
             var entry = _logContext.Entries.Find(id);
             if (entry == null)
@@ -69,7 +69,9 @@ namespace Backend.Controllers
             entry.Entry_Content = entry_content;
             entry.Entry_Date = entry_date;
             entry.Entry_Day = entry_day;
-            
+            entry.Entry_Modify_Date = entry_modify_date;
+            entry.Entry_Modify_Time = entry_modify_time;
+
 
             await _logContext.SaveChangesAsync();
 
@@ -120,7 +122,7 @@ namespace Backend.Controllers
                     p => p.Entry_Modify_Date.Equals(queryParameters.Day));
             }
             var list = await entries.ToListAsync();
-            list = list.OrderBy(e => e.Entry_Modify_Date).ThenBy(e => e.Entry_Day).ToList();
+            list = list.OrderBy(e => e.Entry_Modify_Date).ThenBy(e => e.Entry_Modify_Time).ToList();
             return Ok(list);
         }
 
@@ -156,6 +158,7 @@ namespace Backend.Controllers
             entry.Entry_Content = entry_content;
             entry.Entry_Date = entry_date;
             entry.Entry_Day = entry_day;
+
 
 
             await _logContext.SaveChangesAsync();

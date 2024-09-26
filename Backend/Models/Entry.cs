@@ -16,8 +16,10 @@ namespace Backend.Models
         [Required]
         public string Entry_Content { get; set; } = string.Empty;
         // The day the entry was edited
-
+        [Required]
         public string Entry_Modify_Date {  get; set; } = string.Empty;
+        [Required]
+        public string Entry_Modify_Time { get;set; } = string.Empty;
 
     }
 }
