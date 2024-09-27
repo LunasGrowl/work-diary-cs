@@ -3,60 +3,98 @@ import axios from "axios";
 import { useRef } from "react";
 
 const Entry = (prop) => {
-
+    const URL = import.meta.env.VITE_API;
+ 
+    /**
+     * @brief Initialising states. 
+     * 
+     * @var currentDate State for the current Date in format YYYY-MM-DD.
+     * @var currentTime State for the current time in 12 Hour clock format.
+     * @var date State for the date data of an entry.
+     */  
     const[currentDate] = useState(new Date().toISOString().substr(0,10));
     const[currentTime] = useState(new Date().toLocaleTimeString('en-US'));
     const [date , setDate] = useState(prop.date)
 
+    // Refrences for content data 
     const paraRef = useRef();
     const listRef = useRef();
 
+    /**
+     * @brief Method for sending the updated entry object.
+     * 
+     * @var content Variable for the content of the Entry.
+     * @var list Variable for any bullet points in the Entry.
+     * Every list item will have a "-" infront
+     * 
+     * @description This is called when the update button is clicked.
+     * First it will create a entry object by using the states
+     * and refrences. After a check is made if there are any list 
+     * elements. If true concat the list with the "-" bullet points.
+     * Then try and update the entry via a put method witht he object
+     * in the header.
+     * 
+     * Once complete display message success notification
+     * 
+     * @todo Make a failed notification
+     */
     function handleClick(){
-        const content = paraRef.current.innerText 
+        var content = paraRef.current.innerText 
         const list =  listRef.current.innerText.replaceAll(/^/gm,"-")
+        if(listRef.current.innerHTML !=""){
+            content = content + list
+        }
         try{
-            if(listRef.current.innerHTML !=""){
-                axios.put("https://localhost:7071/api/Entry/"+(prop.id),
-                {
-                    'id':prop.id,
-                    'entry_Content': content + list , 
-                    'entry_Date': date, 
-                    'entry_Day': day,
-                    'entry_Modify_Date': currentDate, 
-                    'entry_Modify_Time': currentTime
-                    
-                })
-            }
-            else{
-                axios.put("https://localhost:7071/api/Entry/"+(prop.id),
-                {
-                    'id':prop.id,
-                    'entry_Content': content,
-                    'entry_Date': date, 
-                    'entry_Day': day,
-                    'entry_Modify_Date': currentDate, 
-                    'entry_Modify_Time': currentTime
-                    
-                })
-            }
+            axios.put(`${URL}/` + prop.id ,
+            {
+                'id':prop.id,
+                'entry_Content': content, 
+                'entry_Date': date, 
+                'entry_Day': day,
+                'entry_Modify_Date': currentDate, 
+                'entry_Modify_Time': currentTime
+                
+            })
         }catch(err){}
         notificationPopup(prop.id);
-        console.log(content)
     }
 
-
-    // Deletes an entry from the database 
+    /**
+     * @brief Deletes an entry from the database.
+     * 
+     * @param id This is the Id of the entry to be deleted.
+     * 
+     * @description A delete method request is sent with the id appeneded
+     * to the url. Once a delete has happened it will change a state
+     * telling the app too re-render the entries.
+     */
     const deleteEntry = async(id)=>{
-        axios.delete("https://localhost:7071/api/Entry/"+id);
+        axios.delete(`${URL}/` + id);
         prop.setChange('1');
     }
 
-    // Displays a notification on successfull edit
+    /**
+     * @brief Displays a notification on specific entry when called.
+     * 
+     * @param id This is the Id of the entry to display the notificaiton.
+     * 
+     * @description This will first retrive the notification element for 
+     * the entry that has been update. Then add the "fade" class which 
+     * will mke it visable. After 2 seconds remove the fade class.
+     */
     function notificationPopup(id){
         const notification = document.getElementById(id).getElementsByTagName('label')[0];
         notification.classList.add('fade');
         setTimeout(() => {notification.classList.remove('fade');}, 2000);
     }
+
+    /**
+     * @brief This will return the day of the week for any given date. 
+     * 
+     * @param dateString This is the current date in YYYY-MM-DD format.
+     * 
+     * @returns Returns the day of the week by acting as an index. 
+     */
 
     function getDayName(dateString){
         var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -64,13 +102,20 @@ const Entry = (prop) => {
         return days[d.getDay()];
     }
 
+    // Sets day as variable
     const day = getDayName(date)
     
+    /**
+     * @brief When the date gets changed it will change the value of the 
+     * date state for update method.
+     * 
+     * @param  e On event
+     */
     const onInputChangeDate = (e) => {
         setDate(e.target.value)
     };
 
-
+    // HTML for each entry
     return(
         <div key = {prop.id} className = "group justify-between flex flex-row" id = "content--text">
             <div className="content--block flex" id = {prop.id}  >

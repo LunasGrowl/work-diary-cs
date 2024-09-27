@@ -4,7 +4,7 @@ import "./DiaryEntry.css";
 import Entry from "./DiaryEntry/Entry";
 
 const DiaryEntry = ({change, setChange}) => {
-    
+    const URL = import.meta.env.VITE_API;
     // Creates a state for a list of entries
     const [entry,setEntry] = useState([])
 
@@ -13,7 +13,11 @@ const DiaryEntry = ({change, setChange}) => {
     // Retrives all entries from database and saves into 'entry' state
     const loadEntries=async()=>{
         try {
-            const result = await axios.get("https://localhost:7071/api/Entry",{headers:{'X-API' : sort.version}});
+            const result = await axios.get(`${URL}/`,{
+                headers:{
+                    'X-API' : sort.version
+            }}
+            );
             setEntry(result.data)
         }catch(error){
             console.log("Yo that api kinda offline. You good bro?")

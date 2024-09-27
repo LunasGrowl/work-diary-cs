@@ -17,6 +17,7 @@ function getDay(val){
 
 // Diary Input Component
 const DiaryInput = ({setChange}) => {
+    const URL = import.meta.env.VITE_API;
     // Creates states for the current day to use in form header
     const[currentDate] = useState(new Date().toISOString().substr(0,10));
     const[currentDay] = useState(getDay(today));
@@ -54,7 +55,7 @@ const DiaryInput = ({setChange}) => {
     const onSubmit = async (e) => {
         e.preventDefault();
         try{
-            await axios.post("https://localhost:7071/api/Entry",entry);
+            await axios.post(`${URL}/`,entry);
             setNotification({style:"text-indigo-800 bg-indigo-300 dark:text-indigo-300 dark:bg-indigo-900 opacity-1" , content : "Entry Sent" })
             await setChange(('1'));
         }catch(err){
