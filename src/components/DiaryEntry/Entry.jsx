@@ -16,10 +16,28 @@ const Entry = (prop) => {
         const list =  listRef.current.innerText.replaceAll(/^/gm,"-")
         try{
             if(listRef.current.innerHTML !=""){
-                axios.put("https://localhost:7071/api/Entry/"+(prop.id)+"?entry_content="+content+ list + "&entry_date=" + date + "&entry_day=" + day +"&entry_modify_date=" + currentDate + "&entry_modify_time=" + currentTime)
+                axios.put("https://localhost:7071/api/Entry/"+(prop.id),
+                {
+                    'id':prop.id,
+                    'entry_Content': content + list , 
+                    'entry_Date': date, 
+                    'entry_Day': day,
+                    'entry_Modify_Date': currentDate, 
+                    'entry_Modify_Time': currentTime
+                    
+                })
             }
             else{
-                axios.put("https://localhost:7071/api/Entry/"+(prop.id)+"?entry_content="+content + "&entry_date=" + date + "&entry_day=" + day +"&entry_modify_date=" + currentDate + "&entry_modify_time=" + currentTime)
+                axios.put("https://localhost:7071/api/Entry/"+(prop.id),
+                {
+                    'id':prop.id,
+                    'entry_Content': content,
+                    'entry_Date': date, 
+                    'entry_Day': day,
+                    'entry_Modify_Date': currentDate, 
+                    'entry_Modify_Time': currentTime
+                    
+                })
             }
         }catch(err){}
         notificationPopup(prop.id);
@@ -58,8 +76,8 @@ const Entry = (prop) => {
             <div className="content--block flex" id = {prop.id}  >
                 <div id = "id--child"className="content--title ">
                     <div className="flex flex-row items-center ">
-                        <h3 className="font-semibold  text-cyan-700 dark:text-cyan-400">{prop.day}</h3>
-                        <input onChange={(e)=>onInputChangeDate(e)} id = "date"type ="date"  className = " bg-slate-100 text-lg border-0 font-medium text-zinc-700 dark:text-zinc-500 italic pl-8" defaultValue= {prop.date} name = "entry_date" />
+                        <h3 className="font-semibold  text-cyan-700 dark:text-cyan-400">{getDayName(date)}</h3>
+                        <input onChange={(e)=>onInputChangeDate(e)} id = "date"type ="date"  className = " bg-slate-100 text-lg border-0 font-medium text-zinc-700 dark:text-zinc-500 italic pl-8" defaultValue= {date} name = "entry_date" />
                     </div>
                     <div className="flex-row  flex justify-end">
                         <label id="update--label" className="mt-1 py-1 px-2  bg-indigo-300 text-indigo-800 dark:text-indigo-300 dark:bg-indigo-800" >Entry Saved</label>

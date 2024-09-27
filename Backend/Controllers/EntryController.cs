@@ -19,7 +19,8 @@ namespace Backend.Controllers
         {
             _logContext = logContext;
 
-            //_logContext.Database.EnsureCreated();
+            // 
+            // //_logContext.Database.EnsureCreated();
         }
 
         [HttpGet]
@@ -57,21 +58,15 @@ namespace Backend.Controllers
             return NoContent();
         }
 
-        [HttpPut, Route("{id}")]
-        public async Task<ActionResult> putEntry(int id, string entry_content, string entry_day , string entry_date, string entry_modify_date, string entry_modify_time)
+        [HttpPut("{id}")]
+        public  async Task<ActionResult> putEntry(int id,[FromBody]Entry update)
         {
-            var entry = _logContext.Entries.Find(id);
-            if (entry == null)
+            if(id != update.Id)
             {
                 return NotFound();
             }
 
-            entry.Entry_Content = entry_content;
-            entry.Entry_Date = entry_date;
-            entry.Entry_Day = entry_day;
-            entry.Entry_Modify_Date = entry_modify_date;
-            entry.Entry_Modify_Time = entry_modify_time;
-
+            _logContext.Entry(update).State = EntityState.Modified;
 
             await _logContext.SaveChangesAsync();
 

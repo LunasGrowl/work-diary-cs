@@ -15,20 +15,7 @@ function getDay(val){
     return dayOfWeek[day.getDay()]; // Return todays day via the index in the array
 }
 
-// // Returns the date as custom string (DD-MM-YYYYY)
-// function getDate(){
-//     const day = today.getDate();
-//     const month = today.getMonth()+1;
-//     const year = today.getFullYear();
-//     return `${year}-${month}-${day}`;
-// }
-
-// // Retrives the size of database for ID value
-// // Potentially not being used as database will auto incrament, made for early development
-// const result = await axios.get("https://localhost:7071/api/Entry");
-// const size = result.data.legnth;
-
-
+// Diary Input Component
 const DiaryInput = ({setChange}) => {
     // Creates states for the current day to use in form header
     const[currentDate] = useState(new Date().toISOString().substr(0,10));
@@ -43,7 +30,6 @@ const DiaryInput = ({setChange}) => {
 
     // Creates state for entry object
     const [entry,setEntry] = useState({
-        //id: size,
         entry_date: currentDate,
         entry_day: currentDay,
         entry_content:"",
@@ -53,11 +39,12 @@ const DiaryInput = ({setChange}) => {
 
 
     // Changes the values of the entry object through inputs in the textfield
-    const {entry_date,entry_day,entry_content} = entry
+    const {entry_day,entry_content} = entry
     const onInputChange = (e) => {
         setEntry({...entry,[e.target.name]:e.target.value})
     };
 
+    // will change the date only on every calander date change
     const onInputChangeDate = (e) => {
         setEntry({...entry,[e.target.name]:e.target.value, entry_day:getDay(e.target.value)})
     };

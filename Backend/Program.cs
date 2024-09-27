@@ -1,9 +1,6 @@
 using Backend.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Asp.Versioning;
-
-//var MyAllowSpecifiOrigins = "_myAllowSpecificOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
 
