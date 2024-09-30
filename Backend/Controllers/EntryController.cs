@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Backend.Models;
-using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using Asp.Versioning;
 
@@ -55,7 +54,9 @@ namespace Backend.Controllers
             _logContext.Entries.Add(entry);
             await _logContext.SaveChangesAsync();
 
-            return NoContent();
+            Uri uri = new Uri($"https://localhost:7071/api/Entry/" + entry.Id);
+
+            return Created(uri, entry);
         }
 
         [HttpPut("{id}")]
@@ -70,7 +71,8 @@ namespace Backend.Controllers
 
             await _logContext.SaveChangesAsync();
 
-            return NoContent();
+           
+            return Ok();
         }
 
         [HttpDelete, Route("{id}")]
@@ -119,62 +121,6 @@ namespace Backend.Controllers
             var list = await entries.ToListAsync();
             list = list.OrderBy(e => e.Entry_Modify_Date).ThenBy(e => e.Entry_Modify_Time).ToList();
             return Ok(list);
-        }
-
-        [HttpGet, Route("{id}")]
-        public ActionResult getEntry(int id)
-        {
-            var entry = _logContext.Entries.Find(id);
-            if (entry == null)
-            {
-                return NotFound();
-            }
-            return Ok(entry);
-        }
-
-        [HttpPost]
-        public async Task<ActionResult> postEntry(Entry entry)
-        {
-            _logContext.Entries.Add(entry);
-            await _logContext.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        [HttpPut, Route("{id}")]
-        public async Task<ActionResult> putEntry(int id, string entry_content, string entry_day, string entry_date)
-        {
-            var entry = _logContext.Entries.Find(id);
-            if (entry == null)
-            {
-                return NotFound();
-            }
-
-            entry.Entry_Content = entry_content;
-            entry.Entry_Date = entry_date;
-            entry.Entry_Day = entry_day;
-
-
-
-            await _logContext.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        [HttpDelete, Route("{id}")]
-        public async Task<ActionResult> deleteEntry(int id)
-        {
-            var entry = await _logContext.Entries.FindAsync(id);
-
-            if (entry == null)
-            {
-                return NotFound();
-            }
-
-            _logContext.Entries.Remove(entry);
-            await _logContext.SaveChangesAsync();
-
-            return NoContent();
         }
     }
 }

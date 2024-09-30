@@ -122,7 +122,7 @@ const Entry = (prop) => {
                 <div id = "id--child"className="content--title ">
                     <div className="flex flex-row items-center ">
                         <h3 className="font-semibold  text-cyan-700 dark:text-cyan-400">{getDayName(date)}</h3>
-                        <input onChange={(e)=>onInputChangeDate(e)} id = "date"type ="date"  className = " bg-slate-100 text-lg border-0 font-medium text-zinc-700 dark:text-zinc-500 italic pl-8" defaultValue= {date} name = "entry_date" />
+                        <input onChange={(e)=>onInputChangeDate(e)} id = "date"type ="date"  className = " bg-slate-100 text-lg border-0 font-medium text-zinc-700 dark:text-zinc-500 italic pl-8" defaultValue= {prop.date} name = "entry_date" />
                     </div>
                     <div className="flex-row  flex justify-end">
                         <label id="update--label" className="mt-1 py-1 px-2  bg-indigo-300 text-indigo-800 dark:text-indigo-300 dark:bg-indigo-800" >Entry Saved</label>
