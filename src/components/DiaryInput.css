@@ -7,7 +7,7 @@
 #form--input{
     /* background:#1B2122; */
     /* color: aliceblue; */
-    font-family: "Open Sans", sans-serif;
+    
     border-width: 0;
 }
 
@@ -109,7 +109,6 @@
     background: transparent;
     border: none;
     color-scheme: dark;
-    font-family: "Inter", sans-serif;
   }
 
   input[type="date"]:focus-visible{

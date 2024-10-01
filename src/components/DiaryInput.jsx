@@ -72,11 +72,11 @@ const DiaryInput = ({setChange}) => {
                     <p className= "font-semibold pt-8">What did you do?</p>
                     <div id="form--date"className="flex" >
                         <p className = "font-medium text-zinc-700 dark:text-zinc-500 italic pt-8 form--day--display pr-4"   name = "entry_day" >{entry_day}</p>
-                        <input onChange={(e)=>onInputChangeDate(e)} id = "dateHeader" type ="date"  className = "my-2 bg-slate-100 text-lg border-0 font-medium text-zinc-700 dark:text-zinc-500 italic pt-8" defaultValue= {new Date().toISOString().substr(0,10)} name = "entry_date" />
+                        <input onChange={(e)=>onInputChangeDate(e)} id = "dateHeader" type ="date"  className = "my-2 font-synth bg-slate-100 text-lg border-0 font-medium text-zinc-700 dark:text-zinc-500 italic pt-8" defaultValue= {new Date().toISOString().substr(0,10)} name = "entry_date" />
                     </div>
                 </div>
                 <div className="flex flex-col ">
-                    <textarea spellCheck="false" className="text-base h-44 outline-0 resize-none rounded-xl bg-zinc-200 text-black dark:bg-zinc-900 dark:text-white" autoComplete = "off" id="form--input" value={entry_content} name = "entry_content" type="text" onChange={(e)=>onInputChange(e)}/>
+                    <textarea spellCheck="false" className="text-base h-44 outline-0 resize-none rounded-xl bg-zinc-200 text-black dark:bg-synth-900 dark:text-white" autoComplete = "off" id="form--input" value={entry_content} name = "entry_content" type="text" onChange={(e)=>onInputChange(e)}/>
                     <div className="pt-2 flex justify-end">
                         <Notification  type  = {notification.style} content = {notification.content} /> 
                         <SubmitButton/>

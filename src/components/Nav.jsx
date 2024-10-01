@@ -23,15 +23,17 @@ const NavBar = () => {
 
   // HTML for nav component
   return (
-    <div id= "nav--bar" className='sticky top-0 bg-zinc-200 dark:bg-zinc-900 p-4 border-b-4 border-cyan-500 dark:border-cyan-300 ' >
+    <div id= "nav--bar" className='sticky top-0 bg-zinc-200 dark:bg-synth-900 p-4 border-b-2 border-synth-500 dark:border-synth-500 ' >
       <div className='w-full flex flex-row justify-between items-center'>
-      <p></p>
-        <p className='text-2xl m-0 font-medium'>Tata Log<span className='text-xs'>-Logo by William Len</span></p>
-        <div id = "ld--toggle" className='flex justify-end'> 
-          <input className="input" type="checkbox" name="darkmode" id="dark-mode"/>
-          <label onClick={toggleTheme} htmlFor="dark-mode" className="label dark:bg-cyan-500 bg-cyan-700">
-            <span className="circle bg-slate-100 dark:bg-zinc-950"></span>
-          </label>
+        <p className='text-2xl m-0 font-medium font-sans'>Tata Log<span className='text-xs font-sans'>-Logo by William Lenthal</span></p>
+        <div id = "right--navItems" className='flex align-middle'>
+          <div id = "ld--toggle" className='flex justify-end '> 
+            <input className="input" type="checkbox" name="darkmode" id="dark-mode"/>
+            <label onClick={toggleTheme} htmlFor="dark-mode" className="label dark:bg-synth-700 bg-Synth-800">
+              <span className="circle bg-slate-100 dark:bg-zinc-950"></span>
+            </label>
+          </div>
+        <p className="p-1 m-0 text-sm text-synth-500">v2.0</p>
         </div>
       </div>
     </div>

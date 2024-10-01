@@ -5,7 +5,19 @@ export default {
     "./index.html"],
   darkMode:"selector",
   theme: {
-    extend: {},
+    fontFamily:{
+      synth: 'Consolas'
+    },
+    extend: {
+      colors:{
+        synth:{
+          500:'#FF008A',
+          700:'#463C5A',
+          800:'#262335',
+          900:'#241B2F'
+        }
+      }
+    },
   },
   plugins: [],
 
