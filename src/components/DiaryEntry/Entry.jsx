@@ -121,7 +121,7 @@ const Entry = (prop) => {
             <div className="content--block flex" id = {prop.id}  >
                 <div id = "id--child"className="content--title ">
                     <div className="flex flex-row items-center ">
-                        <h3 className="font-semibold  text-cyan-700 dark:text-cyan-400">{getDayName(date)}</h3>
+                        <h3 className="font-normal  text-cyan-700 dark:text-cyan-400">{getDayName(date)}</h3>
                         <input onChange={(e)=>onInputChangeDate(e)} id = "date"type ="date"  className = " bg-slate-100 text-lg border-0 font-medium text-zinc-700 dark:text-zinc-500 italic pl-8" defaultValue= {prop.date} name = "entry_date" />
                     </div>
                     <div className="flex-row  flex justify-end">
@@ -131,7 +131,7 @@ const Entry = (prop) => {
                     </div>
                 </div>
                 <div suppressContentEditableWarning={true} className="content--entry max-w-max" spellCheck = "false" contentEditable = "true" id="content--content">
-                    <p className="break-words text-justify flex" ref={paraRef}>{prop.content.split("-")[0]}</p>
+                    <p className="break-words text-synth-300 text-justify flex" ref={paraRef}>{prop.content.split("-")[0]}</p>
                     <ul className="text-left" ref={listRef}>
                         {prop.content.split("-").slice(1).map((split, index) =>(
                             <li key = {prop.id +"."+index} className="italic">{split}</li>

@@ -23,7 +23,7 @@ const NavBar = () => {
 
   // HTML for nav component
   return (
-    <div id= "nav--bar" className='sticky top-0 bg-zinc-200 dark:bg-synth-900 p-4 border-b-2 border-synth-500 dark:border-synth-500 ' >
+    <nav id= "nav--bar" className=' w-full bg-zinc-200 p-4 dark:bg-synth-900 border-b-2 border-synth-500 dark:border-synth-500 ' >
       <div className='w-full flex flex-row justify-between items-center'>
         <p className='text-2xl m-0 font-medium font-sans'>Tata Log<span className='text-xs font-sans'>-Logo by William Lenthal</span></p>
         <div id = "right--navItems" className='flex align-middle'>
@@ -33,10 +33,10 @@ const NavBar = () => {
               <span className="circle bg-slate-100 dark:bg-zinc-950"></span>
             </label>
           </div>
-        <p className="p-1 m-0 text-sm text-synth-500">v2.0</p>
+        <p className="p-1 m-0 text-sm text-synth-200">v2.0</p>
         </div>
       </div>
-    </div>
+    </nav>
   )
 }
 

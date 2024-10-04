@@ -69,7 +69,7 @@ const DiaryInput = ({setChange}) => {
         <div id="form--block" className="w-9/12">
             <form onSubmit={(e)=> onSubmit(e)}>
                 <div id = "form--heading" className="shrink flex justify-between flex-row"> 
-                    <p className= "font-semibold pt-8">What did you do?</p>
+                    <p className= "font-normal pt-8">What did you do?</p>
                     <div id="form--date"className="flex" >
                         <p className = "font-medium text-zinc-700 dark:text-zinc-500 italic pt-8 form--day--display pr-4"   name = "entry_day" >{entry_day}</p>
                         <input onChange={(e)=>onInputChangeDate(e)} id = "dateHeader" type ="date"  className = "my-2 font-synth bg-slate-100 text-lg border-0 font-medium text-zinc-700 dark:text-zinc-500 italic pt-8" defaultValue= {new Date().toISOString().substr(0,10)} name = "entry_date" />
@@ -83,7 +83,7 @@ const DiaryInput = ({setChange}) => {
                     </div>
                 </div>
             </form>
-            <hr className = "h-1 mx-auto my-4 bg-zinc-200 border-0 rounded dark:bg-zinc-800" ></hr>
+            <hr className = "h-[2px] mx-auto my-4 bg-zinc-200 border-0 rounded dark:bg-synth-400" ></hr>
         </div>
     )
 }

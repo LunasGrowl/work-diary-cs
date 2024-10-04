@@ -11,6 +11,9 @@ export default {
     extend: {
       colors:{
         synth:{
+          200:'#CBBBDF',
+          300:'#788BBD',
+          400:'#5F517A',
           500:'#FF008A',
           700:'#463C5A',
           800:'#262335',
