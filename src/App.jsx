@@ -4,6 +4,7 @@ import DiaryInput from './components/DiaryInput.jsx'
 import { useState } from 'react'
 import LeftBar from './components/LeftBar.jsx'
 import MainContent from './MainContent.jsx'
+import HamburgerMenu from './HamburgerMenu.jsx'
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
           <LeftBar/>
         </div>
         <div className="col-span-5 row-span-4 row-start-2 :col-span-4 ">
+          <HamburgerMenu/>
           <MainContent/>
         </div>
     </div>

@@ -23,7 +23,7 @@ const NavBar = () => {
 
   // HTML for nav component
   return (
-    <nav id= "nav--bar" className=' w-full bg-zinc-200 p-4 dark:bg-synth-900 border-b-2 border-synth-500 dark:border-synth-500 ' >
+    <nav id= "nav--bar" className='z-10 w-full bg-zinc-200 p-4 dark:bg-synth-900 border-b-2 border-synth-500 dark:border-synth-500 ' >
       <div className='w-full flex flex-row justify-between items-center'>
         <p className='text-2xl m-0 font-medium font-sans'>Tata Log<span className='text-xs font-sans'>-Logo by William Lenthal</span></p>
         <div id = "right--navItems" className='flex align-middle'>

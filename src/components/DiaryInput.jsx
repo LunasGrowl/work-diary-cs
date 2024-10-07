@@ -69,10 +69,10 @@ const DiaryInput = ({setChange}) => {
         <div id="form--block" className="w-9/12">
             <form onSubmit={(e)=> onSubmit(e)}>
                 <div id = "form--heading" className="shrink flex justify-between flex-row"> 
-                    <p className= "font-normal pt-8">What did you do?</p>
+                    <p className= "text-sm md:text-base font-normal pt-8">What did you do?</p>
                     <div id="form--date"className="flex" >
-                        <p className = "font-medium text-zinc-700 dark:text-zinc-500 italic pt-8 form--day--display pr-4"   name = "entry_day" >{entry_day}</p>
-                        <input onChange={(e)=>onInputChangeDate(e)} id = "dateHeader" type ="date"  className = "my-2 font-synth bg-slate-100 text-lg border-0 font-medium text-zinc-700 dark:text-zinc-500 italic pt-8" defaultValue= {new Date().toISOString().substr(0,10)} name = "entry_date" />
+                        <p className = "text-sm md:text-base font-medium text-zinc-700 dark:text-zinc-500 italic pt-8 form--day--display pr-4"   name = "entry_day" >{entry_day}</p>
+                        <input onChange={(e)=>onInputChangeDate(e)} id = "dateHeader" type ="date"  className = "md:text-base text-sm my-2 font-synth bg-slate-100 border-0 font-medium text-zinc-700 dark:text-zinc-500 italic pt-8" defaultValue= {new Date().toISOString().substr(0,10)} name = "entry_date" />
                     </div>
                 </div>
                 <div className="flex flex-col ">
