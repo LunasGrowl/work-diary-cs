@@ -1,12 +1,12 @@
-import NavBar from './components/Nav.jsx'
-import DiaryEntry from './components/DiaryEntry.jsx'
-import DiaryInput from './components/DiaryInput.jsx'
-import { useState } from 'react'
-import LeftBar from './components/LeftBar.jsx'
-import MainContent from './MainContent.jsx'
-import HamburgerMenu from './HamburgerMenu.jsx'
+import NavBar from './components/Nav.jsx';
+import LeftBar from './components/LeftBar.jsx';
+import MainContent from './MainContent.jsx';
+import HamburgerMenu from './HamburgerMenu.jsx';
+//import SingleEntry from "remoteApp/SingleEntry";
+import React from 'react';
+import { lazy } from 'react';
 
-
+const SingleEntry = lazy(() => import('remoteApp/SingleEntry'))
 const App = () => {
 
   // HTML for the layout of the webpage
@@ -20,6 +20,7 @@ const App = () => {
         </div>
         <div className="col-span-5 row-span-4 row-start-2 :col-span-4 ">
           <HamburgerMenu/>
+          <SingleEntry id = {52} />
           <MainContent/>
         </div>
     </div>

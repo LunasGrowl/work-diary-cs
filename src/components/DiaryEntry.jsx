@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-    import "./DiaryEntry.css";
+import "./DiaryEntry.css";
 import Entry from "./DiaryEntry/Entry";
 
 const DiaryEntry = ({change, setChange}) => {
-                    const URL = import.meta.env.VITE_API;
+    const URL = import.meta.env.VITE_API;
     // Creates a state for a list of entries
     const [entry,setEntry] = useState([])
 

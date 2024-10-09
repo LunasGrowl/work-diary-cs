@@ -40,7 +40,7 @@ const LeftBar = () => {
                         date = {entry.entry_Date}
                         content = {entry.entry_Content}
                     />
-                    ))}
+                ))}
             </div>
         </div>
     )
