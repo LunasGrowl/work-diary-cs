@@ -25,7 +25,7 @@ const NavBar = () => {
   return (
     <div id= "nav--bar" className='sticky top-0 bg-zinc-200 dark:bg-synth-900 p-4 border-b-2 border-synth-500 dark:border-synth-500 ' >
       <div className='w-full flex flex-row justify-between items-center'>
-        <p className='text-2xl m-0 font-medium font-sans'>Tata Log<span className='text-xs font-sans'>-Logo by William Lenthal</span></p>
+        <p className='text-6xl m-0 font-bold font-sans'>TataLog</p>
         <div id = "right--navItems" className='flex align-middle'>
           <div id = "ld--toggle" className='flex justify-end '> 
             <input className="input" type="checkbox" name="darkmode" id="dark-mode"/>
